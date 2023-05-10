@@ -100,7 +100,7 @@ function proxyResponse(msg) {
 				var newreq = msg.cloneRequest()
 				var newbody = newreq.getRequestBody().toString().replace(lookfor,replacewith)
 				newreq.setRequestBody(newbody)
-				newreq.getHeader().setContentLength(newbody.length())
+				newreq.getRequestHeader().setContentLength(newbody.length())
 				//Send request
 				repeatRequest(msg,newreq)	
 			}
